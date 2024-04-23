@@ -11,7 +11,18 @@ import pickle
 ######################################################################
 #####     CHECK THE PARAMETERS     ########
 ######################################################################
+# Load the data and labels
+data = np.load('question1_cluster_data.npy')
+labels = np.load('question1_cluster_labels.npy')
 
+# Plotting the first 10,000 data points
+plt.figure(figsize=(10, 6))
+plt.scatter(data[:10000, 0], data[:10000, 1], c='blue', marker='.', label='Data Points')
+plt.title('Scatter Plot of the First 10,000 Points')
+plt.xlabel('Dimension 1')
+plt.ylabel('Dimension 2')
+plt.legend()
+plt.show()
 
 def denclue(
     data: NDArray[np.floating], labels: NDArray[np.int32], params_dict: dict
